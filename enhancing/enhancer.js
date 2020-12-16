@@ -33,6 +33,10 @@ function repair(item) {
 }
 
 function get(item) {
-  //for use when working on the stretch problem
+  //takes an item
+  //returns a new item with the name property modified according to the following rules:
+  if (item.enhancement > 0) {
+    item.name = `[+${item.enhancement}] ${item.name}`;
+  }
   return { ...item };
 }
