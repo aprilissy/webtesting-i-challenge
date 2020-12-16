@@ -14,6 +14,7 @@ const item1 = {name:"item1",durability:12, enhancement:18};
 const item2 = {name:"item2",durability:60, enhancement:15};
 const item3 = {name:"item3",durability:36, enhancement:13};
 const item4 = {name:"item4",durability:100, enhancement:20};
+const item5 = {name:"item5",durability:1, enhancement:0};
 
 describe("enhancer method: repair", () => {
   test("repair works", () => {
@@ -61,5 +62,20 @@ describe("enhancer method: success", () => {
     expect(item2.durability).toBe(60);
     expect(item3.durability).toBe(36);
     expect(item4.durability).toBe(100);
+  });
+});
+
+describe("enhancer method: get", () => {
+  test("if the enhancement level is 0, the the name is not modified", () => {
+    const item = {...item5};
+    const getting = enhancer.get(item);
+    expect(getting.name).toEqual(item.name);
+    expect(item5.name).toBe("item5");
+  });
+  test("if the enhancement level is greater than 0, change the name to include the enhancement level, preceded by a plus sign ( + ), between square brackets before the item's name. Example: the name of a 'Iron Sword' enhanced to 7 would be '[+7] Iron Sword'", () => {
+    const item = {...item4};
+    const getting = enhancer.get(item);
+    expect(getting.name).toBe(`[+${item4.enhancement}] ${item4.name}`);
+    expect(getting.name).toBe("[+20] item4");
   });
 });
