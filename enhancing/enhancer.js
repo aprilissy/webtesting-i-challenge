@@ -9,7 +9,7 @@ function success(item) {
   if (item.enhancement < 20) {
     item.enhancement += 1;
   }
-  return { ...item };
+  return item;
 }
 
 function fail(item) {
@@ -21,17 +21,17 @@ function fail(item) {
       item.enhancement -= 1;
     }
   }
-  return { ...item };
+  return item;
 }
 
 function repair(item) {
   item.durability = 100;
-  return { ...item };
+  return item;
 }
 
 function get(item) {
   if (item.enhancement > 0) {
     item.name = `[+${item.enhancement}] ${item.name}`;
   }
-  return { ...item };
+  return item;
 }
