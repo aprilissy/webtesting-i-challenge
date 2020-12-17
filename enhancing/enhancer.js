@@ -6,12 +6,9 @@ module.exports = {
 };
 
 function success(item) {
-  //accepts an item object 
-  //returns a new item object modified according to the rules defined by the client for enhancement success
   if (item.enhancement < 20) {
     item.enhancement += 1;
   }
-
   return { ...item };
 }
 
@@ -33,8 +30,6 @@ function repair(item) {
 }
 
 function get(item) {
-  //takes an item
-  //returns a new item with the name property modified according to the following rules:
   if (item.enhancement > 0) {
     item.name = `[+${item.enhancement}] ${item.name}`;
   }
