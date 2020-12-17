@@ -1,23 +1,21 @@
 const enhancer = require("./enhancer.js");
 
 describe("Sanity Check", () => {
-  it("functions using it", () => {
+  test("running using test", () => {
     expect(true).not.toBe(false);
-  });
-  test("functions using test", () => {
     expect([]).not.toBe([]);
     expect({}).toEqual({});
   });
 });
 
-const item1 = {name:"item1",durability:12, enhancement:18};
-const item2 = {name:"item2",durability:60, enhancement:15};
-const item3 = {name:"item3",durability:36, enhancement:13};
-const item4 = {name:"item4",durability:100, enhancement:20};
-const item5 = {name:"item5",durability:1, enhancement:0};
+const item1 = {name:"item1", durability: 12, enhancement:18};
+const item2 = {name:"item2", durability: 60, enhancement:15};
+const item3 = {name:"item3", durability: 36, enhancement:13};
+const item4 = {name:"item4", durability:100, enhancement:20};
+const item5 = {name:"item5", durability:  1, enhancement: 0};
 
 describe("enhancer method: repair", () => {
-  test("repair works", () => {
+  test("repair resets durability to 100", () => {
     const item = {...item1};
     const fixed = enhancer.repair(item);
     expect(fixed.durability).toBe(100);
