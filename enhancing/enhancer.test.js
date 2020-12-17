@@ -8,18 +8,14 @@ describe("Sanity Check", () => {
   });
 });
 
-let item1;
-let item2;
-let item3;
-let item4;
-let item5;
+let item1, item2, item3, item4, item5;
 
 beforeEach(() => {
-item1 = {name:"item1", durability: 12, enhancement:18};
-item2 = {name:"item2", durability: 60, enhancement:15};
-item3 = {name:"item3", durability: 36, enhancement:13};
-item4 = {name:"item4", durability:100, enhancement:20};
-item5 = {name:"item5", durability:  1, enhancement: 0};
+  item1 = {name:"item1", durability: 12, enhancement:18};
+  item2 = {name:"item2", durability: 60, enhancement:15};
+  item3 = {name:"item3", durability: 36, enhancement:13};
+  item4 = {name:"item4", durability:100, enhancement:20};
+  item5 = {name:"item5", durability:  1, enhancement: 0};
 });
 
 describe("Enhancer method: repair", () => {
